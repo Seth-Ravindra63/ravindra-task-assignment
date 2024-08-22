@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Date;
 
 @Controller
+@RequestMapping("/booking")
 public class FlightbookingController {
     @Autowired
     FlightBookingService service;

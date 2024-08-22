@@ -1,9 +1,11 @@
 package com.seth.service;
 
 import com.seth.entity.FlightBooking;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface FlightBookingService {
 
     public String saveBooking(FlightBooking booking);

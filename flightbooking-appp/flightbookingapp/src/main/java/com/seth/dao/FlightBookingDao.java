@@ -4,9 +4,11 @@ import javax.transaction.Transactional;
 
 import com.seth.entity.FlightBooking;
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class FlightBookingDao {
 
     private HibernateTemplate hibernateTemplate;
@@ -30,13 +32,13 @@ public class FlightBookingDao {
     public String deleteBookingByID(int bookingId) {
         FlightBooking FlightBooking = hibernateTemplate.get(FlightBooking.class, bookingId);
         hibernateTemplate.delete(FlightBooking);
-        return "Student with Booking id ::" + FlightBooking.getBookingID() + " deleted successfully.";
+        return "Flight with Booking id ::" + FlightBooking.getBookingID() + " deleted successfully.";
     }
 
     @Transactional
     public String updateBooking(FlightBooking booking) {
         hibernateTemplate.saveOrUpdate(booking);
-        return "Student with Booking id ::" + booking.getBookingID() + " updated successfully.";
+        return "Flight with Booking id ::" + booking.getBookingID() + " updated successfully.";
     }
 
 
